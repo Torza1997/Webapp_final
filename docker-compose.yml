@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  web:    
+    build:
+      context: ./
+      dockerfile: Dockerfile
+#    environment:
+#       MYSQL_ROOT_PWD: root
+#       MYSQL_USER: torza_123
+#       MYSQL_USER_PWD: torza_123
+#       MYSQL_USER_DB: db 
+    container_name: myweb
+    volumes:
+      - ./myweb:/var/www/html/
+#      - ./mysql/:/var/lib/mysql
+    ports:
+      - 8000:80
+   
+      
+    
