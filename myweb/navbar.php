@@ -10,8 +10,8 @@
                 <a href="#" class="nav-item nav-link active">Home</a>
                 <a href="#" class="nav-item nav-link">ติดต่อ</a>
             </div>
-            <form class="form-inline ml-auto">
-                <input type="text" class="form-control mr-sm-2" placeholder="ค้นหาเมนู">
+            <form class="form-inline ml-auto" action="javascript:void(0)">
+                <input type="text" class="form-control mr-sm-2" placeholder="ค้นหาเมนู" id = "search_menu">
                 <button type="submit" class="btn btn-outline-dark">ค้นหาเมนู</button>
             </form>
         </div>

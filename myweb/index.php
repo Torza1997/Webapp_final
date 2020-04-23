@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Include/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Include/css/main_css.css">
     <link href="/Include/css/fonts.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="/Include/images/logo.png" />
     <title>Coffee</title>
 
 </head>
@@ -14,11 +14,16 @@
 <div>
   <div class="row">
   <!--left-->
-    <div class="col-2 left">
-      
+    <div class="col-2">
+      <div class="row-6 left fixed-div-order" id="myOrder">
+        <center><h3>รายการที่สั่ง</h3></center>
+        <div class="container show">
+        </div>
+        <br>
+      </div>
     </div>
   <!--center-->
-    <div class="col-7">
+    <div class="col-8">
       <div class="container">
         <?php 
           include "Carousel.php";
@@ -30,9 +35,10 @@
       </div>
     </div>
    <!--right-->
-    <div class="col-2 right">
-      
-    </div>>
+    <div class="col-2">
+      <div class="row-6 right" style="background:url('Include/images/img1_rights.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;" >
+      </div>
+    </div>
 
   </div>
   
@@ -47,9 +53,8 @@
 <script src="/Include/js/bootstrap.min.js"></script>
 <script src="/Include/js/main_js.js"></script>
 <!-- end js -->
-
-<script type="text/javascript">
- 
-</script>
+<?php 
+   include "foot.php";
+?>
 </body>
 </html>

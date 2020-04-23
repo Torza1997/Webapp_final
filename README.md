@@ -4,5 +4,5 @@
 # แล้วทำการลง  mysql ตามเว็บนี้ https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
 
 
-# เวลาสร้าง database ก็สร้างใน mysql ที่ลงเวลาใน contaniner เลย  
-# ดังเราจะใช่แค่ container แค่ 1 ตัว ง่ายต่อการอัพขึ้น docker hub
+#เวลาสร้าง database ก็สร้างใน mysql ที่ลงเวลาใน contaniner เลย  
+#ดังเราจะใช่แค่ container แค่ 1 ตัว ง่ายต่อการอัพขึ้น docker hub
