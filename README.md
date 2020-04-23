@@ -1,7 +1,7 @@
 #วิธิลง 
 #1. ทำการ docker-compose up docker file ที่ได้สร้างเอาไว้เพื่อลง ubutu พร้อมทั้งลง php ใน ubutu ตัวด้วย
 #2. เมื่อลงเสร็จ จะได้ container มา 1 container  ชื่อว่า myweb ทำการ docker exec -it myweb /bin/bash
-# แล้วทำการลง  mysql ตามเว็บนี้ https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+#แล้วทำการลง  mysql ตามเว็บนี้ https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
 
 
 #เวลาสร้าง database ก็สร้างใน mysql ที่ลงเวลาใน contaniner เลย  
