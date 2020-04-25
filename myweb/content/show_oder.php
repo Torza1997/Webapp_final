@@ -5,7 +5,8 @@
              # code...
              echo $value['produc'];
              echo '&nbsp&nbsp';
-             echo $value['price'];echo "บ.";
+             echo $value['price']*$value['quantity'];
+             echo "บ.";
              echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
              echo $value['quantity'];
              echo "<br>";

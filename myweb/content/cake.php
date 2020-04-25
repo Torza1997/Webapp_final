@@ -1,5 +1,6 @@
 <?php  
     include '../connect_db.php';
+    session_start();
 ?>
 <div class="row row1">
       <?php
@@ -10,7 +11,7 @@
       ?>
       <div class="col-3">
         <div class="card" style="width: 15rem;">
-        <img src="/Include/images/<?php echo($row['image']);?>" class="card-img-top" alt="..." style="width: auto; height:200px ">
+        <img src="OoadminoO/product_img/<?php echo($row['image']);?>" class="card-img-top" alt="..." style="width: auto; height:200px ">
         <div class="card-body" >
 
           <form action="javascript:void(0)">
@@ -21,7 +22,14 @@
              <button class="btn buttons">-</button>
              <input id="quantity<?php echo($row['id']);?>" type="text" name="quantity" value="1" class="form-control">
              <button class="btn buttons">+</button>
-            <a id = "<?php echo($row['id']);?>" onClick="getids(this.id); return false;" href="javascript:void(0)" class="btn adds">สั่งเค้ก</a>
+              <?php  
+                if($_SESSION['@_$username'] != ''){
+                  echo '<a id = "'.$row["id"].'" onClick="getids(this.id); return false;" href="javascript:void(0)" class="btn adds">สั่งเค้ก</a>';
+                }else{
+                  echo '<a id = "'.$row["id"].'" onClick="alert_(); return false;" href="javascript:void(0)" class="btn adds">สั่งเค้ก</a>';
+                }
+             ?>
+           
           </center>
           <form>
         </div>

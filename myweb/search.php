@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "connect_db.php";
 $sql = "SELECT * FROM Product WHERE Pd_name LIKE '%".$_POST['search']."%'"; 
 $result = mysqli_query($conn, $sql);
@@ -8,7 +9,7 @@ if (mysqli_num_rows($result) > 0) {
      		 echo'
         		<div class="col-3">
 		        <div class="card" style="width: 15rem;">
-		        <img src="/Include/images/'.$row["image"].'" class="card-img-top" alt="..." style="width: auto; height:200px">
+		        <img src="OoadminoO/product_img/'.$row["image"].'" class="card-img-top" alt="..." style="width: auto; height:200px">
 		        <div class="card-body" >
 		          <form action="javascript:void(0)">
 		          <center>
@@ -18,14 +19,18 @@ if (mysqli_num_rows($result) > 0) {
 		             <button class="btn buttons">-</button>
 		             <input id="quantity'.$row["id"].'" type="text" name="quantity" value="1" class="form-control">
 		             <button class="btn buttons">+</button>
-		            <a id = "'.$row["id"].'" onClick="getids(this.id); return false;" href="javascript:void(0)" class="btn adds">สั่งเค้ก</a>
-		          </center>
+		             ';
+		            if($_SESSION['@_$username'] != ''){
+	                  echo '<a id = "'.$row["id"].'" onClick="getids(this.id); return false;" href="javascript:void(0)" class="btn adds">สั่ง</a>';
+	                }else{
+	                  echo '<a id = "'.$row["id"].'" onClick="alert_(); return false;" href="javascript:void(0)" class="btn adds">สั่ง</a>';
+	                }
+		         echo'</center>
 		          <form>
 		        </div>
 		        </div>
 		      </div>';
-        }
-    
+         }
     }
     echo '</div> 
     		<script type="text/javascript">

@@ -124,6 +124,7 @@ h5 #animate:hover{
  .badge{
  	background-color: #D1FF00;
  	color: black;
+ 	height: 10%;
  }
  /****************foot************************/
  .foot{
@@ -169,3 +170,61 @@ h5 #animate:hover{
  img #slides_css{
  	border-radius: 25px;
  }
+ thead{
+ 	background-color: #000000;
+ 	color: white;
+ }
+ .table-hover th:hover {
+    background-color: #D1FF00;
+    color: black;
+}
+#Login{
+	margin-left: 215%;
+}
+#Logut{
+	margin-left: 230%;
+}
+#Logut_admin{
+	margin-left: 145%;
+}
+
+.modal-content{
+	margin-top: 25%;
+	border-radius: 25px;
+	border: 5px solid #D1FF00;
+	background-color: #000000;
+    color: white;
+}
+#login_modal .modal-body{
+	margin-left: 20%;
+	margin-right:20%;
+}
+#F_name ,.F_name,#user_name,.user_name,#user_email,.user_email{
+	width: 150%;
+	margin-left: 20%;
+}
+#L_name ,.L_name,#user_pw,.user_pw,#user_phone,.user_phone{
+    width: 150%;
+	margin-left: 60%;
+}
+.user_address{
+	margin-left: 6%;
+}
+#user_address{
+	width: 90%;
+	margin-left: 6%;
+}
+#P_s,#P_s1{
+	margin-top: 1%;
+	margin-bottom: -10%;
+	color:red; 
+	margin-left:20%;
+	font-size:80%;
+	width: 100%
+}
+#P_s1{
+	margin-left:60%;
+}
+#L_user,#L_admin{
+	border-radius: 25px;border: 1.5px solid #D1FF00;
+}

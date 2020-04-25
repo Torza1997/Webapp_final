@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Include/css/main_css.css">
     <link href="/Include/css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="/Include/images/logo.png" />
-    <title>Coffee</title>
+    <title>TORTAIR COFFEE STORE</title>
 
 </head>
 <body>
@@ -43,6 +43,9 @@
   </div>
   
 </div>
+<?php 
+include 'modal_main.php';
+?>
 
 
 

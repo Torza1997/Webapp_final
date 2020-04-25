@@ -1,0 +1,113 @@
+body{
+	background-color: #242424;
+	font-family: 'Prompt', sans-serif;
+}
+#navbar a:hover {
+  background: #000000;
+  color: #ffffff; 
+}
+#navbar{
+	background-color: #D1FF00;
+}
+#navbar a{
+	color: #000000;
+}
+#animate{
+	animation: type 3s steps(18);
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 4px solid black;
+	width: 18ch;
+}
+@keyframes type {
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 18ch
+	}
+}
+
+#animate_menu{
+	margin-top: 4%;
+	animation: type_menu 3s steps(15);
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 4px solid black;
+	width: 15ch;
+	color: black;
+}
+@keyframes type_menu {
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 15ch
+	}
+}
+/*********************************************/
+.row_style{
+	border-radius: 25px;
+	margin-top: 2%;
+	margin-left:10%;
+	margin-right: 10%;
+	margin-top: 2%;
+	border: 5px solid #D1FF00;
+  	background-color: #ffffff;
+  	color: #ffffff;
+}
+.table_style{
+	margin-top: 4%;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cart_table_header{
+ 	background-color: black;
+ 	color: #D1FF00;
+ }
+ .table-hover th:hover {
+    background-color: #D1FF00;
+    color: black;
+}
+.table_style a,#ADD_memu{
+	background-color: #D1FF00;
+    color: black
+}
+.table_style a:hover{
+	background-color: #000000;
+    color: #ffffff;
+}
+#ADD_memu{
+	margin-top: 2%;
+	margin-bottom: 4%;
+}
+/************popup******************/
+.modal-footer,.modal-header{
+	border-radius: 10px;
+	border: 5px solid #D1FF00;
+  	background-color: #000000;
+  	color: #ffffff;
+}
+/****************************************/
+.modal-content {
+	border-radius: 14px;
+	border: 5px solid #D1FF00;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.modal-body{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 3%;
+	margin-right: 3%;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*************************************/
+.btn-secondary {
+	background-color: #D1FF00;
+	color: black;
+}
+.btn-secondary:hover{
+	background-color:black;
+	color: #D1FF00;
+}

@@ -7,12 +7,10 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse1">
             <div class="navbar-nav">
-                <a href="javascript:void(0)" id = "link_home" class="nav-item nav-link active">Home</a>
-                <a href="javascript:void(0)" id = "link_contrac" class="nav-item nav-link">ติดต่อ</a>
+                <a href="javascript:void(0)" class="nav-item nav-link active">ออร์เดอรฺของลูกค้า</a>
+                <a id = "menu" href="javascript:void(0)" class="nav-item nav-link">เพิ่มเมนูใหม่/แก้ไข</a>
+                <a href="javascript:void(0)" class="nav-item nav-link">เพิ่มรหัสแอดมิน/แก้ไข</a>
+                <a href="javascript:void(0)" class="nav-item nav-link">ยอดขายของร้าน</a>
             </div>
-            <form class="form-inline ml-auto" action="javascript:void(0)">
-                <input type="text" class="form-control mr-sm-2" placeholder="ค้นหาเมนู" id = "search_menu">
-                <button type="submit" class="btn btn-outline-dark">ค้นหาเมนู</button>
-            </form>
         </div>
-    </nav>
+</nav>

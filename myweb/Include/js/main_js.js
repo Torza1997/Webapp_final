@@ -89,3 +89,132 @@ $(document).ready(function(){
   });
 
 });
+/*********************************************************/
+$('#link_home').click(function(){
+  $(".home").load("content/coffee.php");
+});
+$('#link_contrac').click(function(){
+  alert('ไว้ทำหน้า ติดต่อ');
+});
+/***********************************/
+function alert_(){
+  $('#aert_modal').modal('show');
+  $("#message").html(' \
+    <center><h5>คุณยังไม่ล็อคอิน กรุณาล็อคอินก่อนสั่งซื้อ</h5></center> \
+    <center><a onClick="link_login(); return false;" style="color: #D1FF00; display: inline;" href = "javascript:void(0)">Login</a> &nbsp &nbsp \
+    <a onClick="link_register(); return false;" style="color: #D1FF00;display: inline;" href = "javascript:void(0)">Register</a></center> \
+    ');
+}
+/*******************************************************/
+function link_login(){
+  $('#aert_modal').modal('hide');
+  $("#message").html('');
+  $('#login_modal').modal('show');
+}
+
+function link_register(){
+  $('#aert_modal').modal('hide');
+  $("#message").html('');
+  $('#regis_modal').modal('show');
+}
+/*****************************************************/
+
+/************register****************************/
+$("#regis_submit").click(function(){
+  var data = $("#_user_register").serialize();
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"register.php",
+          data:data,
+          success: function (result){
+            console.log(result);
+                if(result == 1){
+                  $("#alert2").html("");$("#alert3").html("");$("#alert4").html("");
+                  $("#alert1").html("<p style = 'color:red; margin-left:6% ;font-size:80%;'>กรุณากรอกข้อมูลให้ครับ</p>");
+                }else if(result==2){
+                  $("#alert1").html("");
+                  $("#alert2").html("<p id ='P_s'>ตัวอักษรตามด้วยตัวเลข</p>");
+                  $("#alert3").html("<p id ='P_s'>example@_mail.com</p>");
+                  $("#alert4").html("<p id ='P_s1'>ตัวเลขเบอร์โทร 10 หลัก</p>");
+                }else if(result==3){
+                  $("#alert1").html("");$("#alert2").html("");$("#alert4").html("");
+                  $("#alert3").html("<p id ='P_s'>example@_mail.com</p>");
+                }else if(result==4){
+                  $("#alert1").html("");$("#alert3").html("");$("#alert4").html("");
+                  $("#alert2").html("<p id ='P_s'>ตัวอักษรตามด้วยตัวเลข</p>");
+                }else if(result==5){
+                  $("#alert2").html("");$("#alert3").html("");$("#alert4").html("");
+                  $("#alert1").html("<p style = 'color:green; margin-left:6% ;font-size:80%;'>Success!</p>");
+                  claerRegisfrom();
+                  $('#regis_modal').modal('hide');
+                }else if(result==7){
+                  $("#alert1").html("");$("#alert2").html("");$("#alert3").html("");
+                  $("#alert4").html("<p id ='P_s1'>ตัวเลขเบอร์โทร 10 หลัก</p>");
+                }else if(result==6){
+                  $("#alert2").html("");$("#alert3").html("");$("#alert4").html("");
+                  $("#alert1").html("<p style = 'color:red; margin-left:6% ;font-size:80%;'>Register fail!</p>");
+                }else if(result==8){
+                  $("#alert2").html("");$("#alert3").html("");$("#alert4").html("");
+                  $("#alert1").html("<p style = 'color:red; margin-left:6% ;font-size:80%;'>user นี้มีคนใช้แล้ว</p>");
+                }else{
+                  $("#alert1").html("");$("#alert2").html("");$("#alert3").html("");$("#alert4").html("");
+                }
+            }
+       });
+})
+function claerRegisfrom(){
+  $("#F_name").val('');$("#L_name").val('');
+  $("#user_name").val('');$("#user_pw").val('');
+  $("#user_email").val('');$("#user_phone").val('');
+  $("#user_address").val('');
+}
+
+/***************************login*************************/
+$("#_user_login_submit").click(function(){
+    var data_login = $("#_user_login").serialize();
+    $.ajax({
+          type:"POST",
+          cache:false,
+          url:"login.php",
+          data:data_login,
+          success: function (result){
+              if(result == 1){
+                claerLoginFrom();
+                $('#login_modal').modal('hide');
+                location.reload();
+              }else{
+                $("#Login_alert").html("<p style = 'color:red; margin-left:24% ;font-size:80%;margin-top:-5%'>Login fail!</p>");
+                claerLoginFrom();
+              }
+            }
+       });
+});
+
+function claerLoginFrom(){
+  $("#Username_login").val('');$("#userPassword_login").val('');
+}
+function link_Logut(){
+    $('#aert_modal').modal('show');
+    $("#message").html(' \
+      <center><h5>คุณต้องการออกจากระบบ</h5></center> \
+      <center><a onClick="link_Logut_session(); return false;" style="color: #D1FF00; display: inline;" href = "javascript:void(0)">Logout</a> &nbsp &nbsp');
+}
+function link_Logut_session(){
+   $.ajax({
+          type:"POST",
+          cache:false,
+          url:"logout.php",
+          data:{
+            key:'logout',
+          },
+          success: function (result){
+              if(result == 1){
+                $("#message").html('<center><h5>ออกจากระบบแล้ว</h5></center>');
+                location.reload();
+              }else{
+                $("#message").html('<center><h5>Loguot Fail!</h5></center>');
+              }
+            }
+       });
+}
