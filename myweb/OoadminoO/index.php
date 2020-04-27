@@ -1,10 +1,10 @@
 <?php 
-  /*session_start();
+  session_start();
   if($_SESSION['@_$ADDS_USERNAME'] != '' and $_SESSION['status_@_admin'] == 9){
 
   }else{
     header('Location: ../');
-  }*/
+  }
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,10 @@
     <?php 
       include "modals.php";
   ?>
-  </div>
+    <?php 
+      include "modals.php";
+  ?>
+   
 </div>
 
 
@@ -41,6 +44,8 @@
 <script src="Include/js/popper.min.js"></script>
 <script src="Include/js/bootstrap.min.js"></script>
 <script src="Include/js/admin_js.js"></script>
-<!-- end js -->
+<?php 
+   include "foot_admin.php";
+?>
 </body>
 </html>

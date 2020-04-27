@@ -178,15 +178,15 @@ h5 #animate:hover{
     background-color: #D1FF00;
     color: black;
 }
-#Login{
+/*#Login{
 	margin-left: 215%;
 }
 #Logut{
-	margin-left: 230%;
+	margin-left: 215%;
 }
 #Logut_admin{
 	margin-left: 145%;
-}
+}*/
 
 .modal-content{
 	margin-top: 25%;
@@ -225,6 +225,9 @@ h5 #animate:hover{
 #P_s1{
 	margin-left:60%;
 }
-#L_user,#L_admin{
+#L_user,#L_admin1,#L_admin2{
 	border-radius: 25px;border: 1.5px solid #D1FF00;
+}
+#L_user,#L_admin1,#Login{
+	margin-left: auto;
 }

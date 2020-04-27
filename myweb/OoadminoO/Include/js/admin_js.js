@@ -1,5 +1,12 @@
+$(document).ready(function(){
+  $('.main_page').load('Order_list.php');
+});
+
 $('#menu').on('click',function(){
 	$('.main_page').load('menu.php');
+});
+$('#order_list').on('click',function(){
+  $('.main_page').load('Order_list.php');
 });
 
 function Show_modal(){

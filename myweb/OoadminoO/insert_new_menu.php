@@ -1,6 +1,6 @@
 <?php
 include '../connect_db.php';
-
+date_default_timezone_set("Asia/Bangkok");
 if(!empty($_POST)){
 
 	if(!empty($_POST['ubdate'])){

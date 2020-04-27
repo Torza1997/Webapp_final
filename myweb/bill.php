@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("Asia/Bangkok");
 require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf([
 	'default_font_size' => 10,
@@ -41,7 +42,7 @@ ob_start();
 			<div class ="row row_style">
 				<div class ="col-2 col_style">
 				      <h1 class ="text-center ">TORTAIR COFFEE STORE</h1>
-				      <h3  class = "date_style">Date Issue: <?php echo date("Y:m:d"); ?></h3>
+				      <h3  class = "date_style">Date Issue: <?php echo  date('d/m/Y'); ?></h3>
 				      <h3 class = "time_style">Time Issue: <?php echo date("H:i:s"); ?></h3>
 				      <h3 class = "time_style">Customer: <?php echo $_SESSION['@_$F_name']; ?> <?php echo $_SESSION['@_$L_name']; ?></h3>
 				</div>

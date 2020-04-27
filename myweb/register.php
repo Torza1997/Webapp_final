@@ -1,10 +1,11 @@
 <?php
-include "connect_db.php"; 
+include "connect_db.php";
+date_default_timezone_set("Asia/Bangkok"); 
 if(isset($_POST)){
 	$F_name = $_POST['F_name']; $L_name = $_POST['L_name'];
 	$user_name = $_POST['user_name']; $user_pw = $_POST['user_pw'];
 	$user_email = $_POST['user_email']; $user_phone = $_POST['user_phone'];
-	$user_address =  $_POST['user_address']; $date = date("Y/m/d");
+	$user_address =  $_POST['user_address']; $date =  date("Y/m/d");
 
 	if(empty($F_name) || empty($L_name) || empty($user_name) || empty($user_pw) || empty($user_email) || empty($user_address) || empty($user_phone)){
 		echo 1 ;
