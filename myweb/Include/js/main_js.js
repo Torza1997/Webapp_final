@@ -218,3 +218,35 @@ function link_Logut_session(){
             }
        });
 }
+
+/****************insert_order**************************/
+function confirm_insert_orders(){
+  $('#aert_modal').modal('show');
+  $("#message").html('<center> \
+                      <h5>คุณต้องการสั่งซื้อทั้งหมดใช่หรือไม่</h5> \
+                      <button onClick="insert_orders(); return false;" type="button" class="btn" style="margin-top: 2%">ใช่</button> \
+                      <button style="color: black; margin-top: 2%;" type="button" class="btn" data-dismiss="modal">ไม่</button>\
+                    </center>');
+}
+function insert_orders(){
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"insert_order.php",
+          data:{
+            key:'Insert_order',
+          },
+          success: function (result_order){
+             if(result_order == 1){
+                $("#message").html('<center><h5>สั่งซื้อเรียบร้อย</h5> \
+                  <a style=" /*text-decoration: none;*/ color: #D1FF00" href="MY_bills/mybill.pdf">ดาว์โหลดใบเสร็จ</a></center>');
+              }else{
+                $("#message").html('<center>\
+                  <h5>สั่งซื้อไม่สำเร็จ</h5>\
+                  <a style=" /*text-decoration: none;*/ color: #D1FF00" href="https://www.instagram.com/t.tor.thanatos/">ติดต่อสอบถามได้ทางเพจ</a>\
+                  </center>');
+              }
+        }
+   });
+}
+

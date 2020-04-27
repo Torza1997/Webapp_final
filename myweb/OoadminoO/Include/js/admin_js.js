@@ -89,7 +89,8 @@ function edit_menu(id){
       			  $('#Type_menu').val(data.Type);
       			  $('#uploaded_image').html('<center><img src="product_img/'+data.image+'" height="150" width="225" class="img-thumbnail" /></center>');
       			  $('#status_ubdate').val('update');
-      			  $('#menu_id').val(data.id);  
+      			  $('#menu_id').val(data.id);
+              $('#alerts').html("");  
             }
       }); 
 }

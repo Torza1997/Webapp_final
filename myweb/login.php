@@ -10,7 +10,10 @@ if(isset($_POST)){
 	$result = mysqli_query($conn,$query) or dei(mysql_error());
 	$rows = mysqli_num_rows($result);
 	if($rows == 1){
+		$row_S = mysqli_fetch_assoc($result );
 		$_SESSION['@_$username'] = $username;
+		$_SESSION['@_$F_name'] = $row_S['F_name'];
+		$_SESSION['@_$L_name'] = $row_S['L_name'];
 		echo 1;
 	}else{
 		$sql = "SELECT * FROM admin_S  WHERE username_admin ='".$username."' AND password_admin = '".md5($password)."' ";

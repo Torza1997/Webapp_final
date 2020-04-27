@@ -47,4 +47,9 @@
 
   </tbody>
 </table>
+<?php
+  if (!empty($_SESSION['cart'])) {
+     echo '<center><button onClick="confirm_insert_orders(); return false;" type="button" class="btn" style="margin-top: 2%">สั่งทั้งหมด</button></center>';
+   } 
+?>
 </div>

@@ -10,8 +10,8 @@
       <div class="modal-body" id = "message" >
         
       </div>
-      <div class="modal-footer" style="border-top: 5px solid #000000;">
-        <button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="modal-footer" style="border-top: 5px solid #000000; height: 50px">
+        <!--<button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
       </div>
     </div>
   </div>
