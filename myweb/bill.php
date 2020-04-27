@@ -54,6 +54,8 @@ ob_start();
 								<th>รายการที่สั่ง</th>
 								<th>จำนวน</th>
 								<th>ราคา</th>
+								<th>ราคารวม</th>
+								<th>หน่วยเงิน</th>
 							</tr>
 							
 						</thead>
@@ -69,7 +71,9 @@ ob_start();
 										<td>'.$no_s.'</td>
 										<td>'.$value['produc'].' </td>
 										<td>'.$value['quantity'].'</td>
-										<td>'.$value['price'] * $value['quantity'].' บาท</td>
+										<td>'.$value['price'].'</td>
+										<td>'.$value['price'] * $value['quantity'].'</td>
+										<td>บาท</td>
 										</tr>
 							             ';
     									$total = $total +($value['price']*$value['quantity']);

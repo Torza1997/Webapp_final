@@ -11,7 +11,7 @@
       <th scope="col">Remove</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id = "set_null">
   	<?php 
   session_start();
   if (!empty($_SESSION['cart'])) {

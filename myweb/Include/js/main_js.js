@@ -1,6 +1,5 @@
 /***************************click********************************/
 $(document).ready(function(){
-
  	$(".home").load("content/coffee.php");
  	$(".show").load("content/show_oder.php");
 
@@ -238,12 +237,19 @@ function insert_orders(){
           },
           success: function (result_order){
              if(result_order == 1){
+                $(".home").load("content/cart_table.php");
+                $("#show_S").html("<br><center><h5>ยังไม่มีรายการสั่ง</h5></center>");
+
+                var element = document.getElementsByClassName("badge")[0];
+                    element.innerHTML = 0;
+
                 $("#message").html('<center><h5>สั่งซื้อเรียบร้อย</h5> \
-                  <a style=" /*text-decoration: none;*/ color: #D1FF00" href="MY_bills/mybill.pdf">ดาว์โหลดใบเสร็จ</a></center>');
+                  <a style="color: #D1FF00" href="MY_bills/mybill.pdf">ดาว์โหลดใบเสร็จ</a></center>');
+
               }else{
                 $("#message").html('<center>\
                   <h5>สั่งซื้อไม่สำเร็จ</h5>\
-                  <a style=" /*text-decoration: none;*/ color: #D1FF00" href="https://www.instagram.com/t.tor.thanatos/">ติดต่อสอบถามได้ทางเพจ</a>\
+                  <a style="color: #D1FF00" href="https://www.instagram.com/t.tor.thanatos/">ติดต่อสอบถามได้ทางเพจ</a>\
                   </center>');
               }
         }

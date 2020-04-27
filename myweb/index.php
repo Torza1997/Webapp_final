@@ -16,9 +16,12 @@
   <!--left-->
     <div class="col-2">
       <div class="row-6 left fixed-div-order" id="myOrder">
-        <center><h3>รายการที่สั่ง</h3></center>
-        <div class="container show">
+        <center><h3 style="margin-top: 5%;">รายการที่สั่ง</h3></center>
+
+        <div class="container show" id = "show_S">
+
         </div>
+
         <br>
       </div>
     </div>
@@ -31,22 +34,24 @@
           include "nav2.php";
         ?>
       </div>
+
       <div class="container home" id="home" >
       </div>
+
     </div>
    <!--right-->
     <div class="col-2">
-      <div class="row-6 right" style="background:url('Include/images/img1_rights.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;" >
+      <div class="row-6 right" style="background:url('Include/images/img1_rights.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;">
       </div>
     </div>
 
   </div>
   
 </div>
-<?php 
-include 'modal_main.php';
-?>
 
+<?php 
+    include 'modal_main.php';
+?>
 
 
 
@@ -59,5 +64,6 @@ include 'modal_main.php';
 <?php 
    include "foot.php";
 ?>
+
 </body>
 </html>
