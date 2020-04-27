@@ -67,8 +67,8 @@ ob_start();
 							         echo '
 							          <tr>
 										<td>'.$no_s.'</td>
-										<td>'.$value['produc'].' บาท</td>
-										<td>'.$value['quantity'].' บาท</td>
+										<td>'.$value['produc'].' </td>
+										<td>'.$value['quantity'].'</td>
 										<td>'.$value['price'] * $value['quantity'].' บาท</td>
 										</tr>
 							             ';
