@@ -18,7 +18,7 @@ session_start();
     </ul>
     <?php 
         if($_SESSION['@_$username'] != ''){
-          echo '<a id = "L_user" onClick="link_Logut(); return false;" class="nav-link" href="javascript:void(0)">คุณ:&nbsp'.$_SESSION['@_$username'].'</a>';
+          echo '<a id = "L_user" onClick="link_Logut(); return false;" class="nav-link" href="javascript:void(0)">คุณ:&nbsp'.$_SESSION['@_$F_name'].'</a>';
         }else if($_SESSION['@_$ADDS_USERNAME'] != '' and $_SESSION['status_@_admin'] == 9){
                 echo '
                   <a id = "L_admin1" class="nav-link" href="OoadminoO/">Admin</a>&nbsp

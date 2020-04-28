@@ -29,21 +29,26 @@ function getids(ids){
       var produc = document.getElementById("name"+ids.toString()).textContent;
       var price = document.getElementById("price"+ids.toString()).textContent;
       var quantity = document.getElementById("quantity"+ids.toString()).value;
-      var id = ids;
-       $.ajax({
-          type:"POST",
-          cache:false,
-          url:"session_cart.php",
-          data:{
-            id:id,
-            produc: produc,
-            price: price,
-            quantity: quantity,
-          },
-          success: function (){
-            $(".show").load("content/show_oder.php");
-          }
-        });
+
+      if(quantity == 0){
+          $("#quantity"+ids.toString()).val(1);
+      }else{
+         var id = ids;
+         $.ajax({
+            type:"POST",
+            cache:false,
+            url:"session_cart.php",
+            data:{
+              id:id,
+              produc: produc,
+              price: price,
+              quantity: quantity,
+            },
+            success: function (){
+              $(".show").load("content/show_oder.php");
+            }
+          });
+        }
   }
   /***********************************************************/
 function _Cart_table(){

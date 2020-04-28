@@ -35,7 +35,7 @@ if (!empty($_POST)) {
                   <td>'.$row_s['Price'].'</td>
                   <td>'.number_format($result_rows['Quantity']*$row_s['Price'],2).'</td>
                   <td id = "add_new_b'.$result_rows['id'].'" style ="text-align: center;">'.$Status.'</td>
-                  <td style ="text-align: center;"><a>ลบ</a></td>
+                  <td id = "'.$result_rows['Menu_ID'].'" style ="text-align: center;" onClick="admin_delete_oder_one(this.id); return false;"><a>ยกเลิก</a></td>
                 </tr>';
 			echo $output_html;	
 			}

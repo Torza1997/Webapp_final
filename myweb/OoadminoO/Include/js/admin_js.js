@@ -5,6 +5,11 @@ $(document).ready(function(){
 $('#menu').on('click',function(){
 	$('.main_page').load('menu.php');
 });
+
+$('#Sales').on('click',function(){
+  $('.main_page').load('graph_sales.php');
+});
+
 $('#order_list').on('click',function(){
   $('.main_page').load('Order_list.php');
 });
@@ -179,8 +184,16 @@ function update_cook_status(ids,class_n){
             }
        })
 }
-
-$("#btn_send_s").on('click',function(){
+/***********************************************************/
+function  comfirm_send_order(){
+          $('#message').html('<center> \
+                              <h5>คุณต้องการส่งออร์เดอร์ทั้งหมดหรือไม่</h5> \
+                              <button onClick="send_order_success(); return false;" type="button" class="btn" style="margin-top: 2%;color: #D1FF00; ">ใช่</button> \
+                              <button style="color: #D1FF00; margin-top: 2%;" type="button" class="btn" data-dismiss="modal">ไม่</button>\
+                              </center>');
+          $('#aert_modal').modal('show');
+}
+function send_order_success(){
     var User_id = document.getElementById('_user_ID').value;
     var Ref_no = document.getElementById('RF_n').value;
     $.ajax({
@@ -192,8 +205,80 @@ $("#btn_send_s").on('click',function(){
             Ref_no:Ref_no,
           },
           success:function (result_s){
-                alert(result_s);
+                if(result_s == 1){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">ส่งสิ้นค้าเร็จแล้ว</h5></center>');
+                  $('#aert_modal').modal('show');
+                }else if(result_s == 2){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">SQL Error</h5></center>');
+                  $('#aert_modal').modal('show');
+                }
+                $('.main_page').load('Order_list.php');
             }
        });
-})
+}
      
+/*******************************************************/
+function  comfirm_delete_order(Rf_n){
+          $('#message').html('<center> \
+                              <h5>คุณต้องการจะลบออร์เดอร์ทั้งหมดหรือไม่</h5> \
+                              <button onClick="admin_delete_order('+Rf_n+'); return false;" type="button" class="btn" style="margin-top: 2%;color: #D1FF00; ">ใช่</button> \
+                              <button style="color: #D1FF00; margin-top: 2%;" type="button" class="btn" data-dismiss="modal">ไม่</button>\
+                              </center>');
+          $('#aert_modal').modal('show');
+}
+
+function admin_delete_order(Rf_n){
+    $.ajax({
+          type:"POST",
+          cache:false,
+          url:"admin_delete_order.php",
+          data:{
+            key:"delete_order_all",
+            Ref_no:Rf_n,
+          },
+          success:function (result_s){
+                if(result_s == 1){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">ลบออร์เดอร์ทั้งหมดแล้ว</h5></center>');
+                  $('#aert_modal').modal('show');
+                }else if(result_s == 2){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">SQL Error</h5></center>');
+                  $('#aert_modal').modal('show');
+                }
+                $('.main_page').load('Order_list.php');
+            }
+       });
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+function admin_delete_oder_one(memu_id){
+   var User_id = document.getElementById('_user_ID').value;
+   var Ref_no = document.getElementById('RF_n').value;
+    $.ajax({
+          type:"POST",
+          cache:false,
+          url:"admin_delete_order.php",
+          data:{
+            key:"admin_delete_order",
+            Ref_no:Ref_no,
+            User_id:User_id,
+            memu_id:memu_id,
+          },
+          success:function (result_s){
+               if(result_s == 1){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">ลบออร์เดอร์แล้ว</h5></center>');
+                  $('#aert_modal').modal('show');
+                }else if(result_s == 2){
+                  $('#aert_modal_menu_list').modal('hide');
+                  $('#message').html('<center><h5 style ="color: #ffffff;">SQL Error</h5></center>');
+                  $('#aert_modal').modal('show');
+                }
+                $('.main_page').load('Order_list.php');
+            }
+       });
+}

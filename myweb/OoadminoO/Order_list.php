@@ -14,7 +14,7 @@ include '../connect_db.php';
       <th scope="col">ที่อยู่</th>
       <th scope="col">Order</th>
       <th scope="col">สถานะ</th>
-      <th scope="col"><center>delete</center></th>
+      <th scope="col"><center>ยกเลิก</center></th>
     </tr>
   </thead>
   <tbody>
@@ -40,10 +40,10 @@ include '../connect_db.php';
       <td><?php echo $row_s['Phone'];?></td>
       <td><a id ="<?php echo $row_s['Adddress']; ?>" onClick="VieW_address(this.id); return false;" href="javascript:void(0)">View</a></td>
       <td><a class = "<?php echo $row['Ref_number']; ?>" id ="<?php echo $row['User_ID']; ?>" onClick="VieW_Menu_list(this.id,this.className); return false;" href="javascript:void(0)">View</a></td>
-      <td><?php if($row['Status'] == 0){echo "ยังทำไม่เส็จ";}else if($row['Status'] == 1){echo "กำลังทำ";}else if($row['Status'] == 2){echo "ทำเส็จแล้ว";}?></td>
+      <td><?php if($row['Status'] == 0){echo "ยังทำไม่เส็จ";}else if($row['Status'] == 1){echo "กำลังทำ";}else if($row['Status'] == 2){echo '<a id ="btn_send_s" onClick="comfirm_send_order(); return false;" href="javascript:void(0)">รอส่ง</a>&nbsp<i class="fas fa-box"></i>';}?></td>
       <td>
           <center>
-          <a id = "<?php echo ($row['id']);?>"  href="javascript:void(0)" class="btn delete">ลบ</a>
+          <a id = "<?php echo $row['Ref_number']; ?>" onClick="comfirm_delete_order(this.id); return false;"  href="javascript:void(0)" class="btn delete">ยกเลิก</a>
           </center>
       </td>
     </tr>
@@ -52,6 +52,8 @@ include '../connect_db.php';
     }
     ?>
   </tbody>
+ 
 </table>
+
 
 

@@ -91,16 +91,13 @@
                 <th scope="col">Price</th>
                 <th scope="col">Total</th>
                 <th scope="col">Status</th>
-                <th scope="col"><center>delete</center></th>
+                <th scope="col"><center>ยกเลิก</center></th>
               </tr>
             </thead>
             <tbody id = "fecth_menu_content">
                 
             </tbody>
           </table>
-          <center>
-            <button id = "btn_send_s" onClick="Send_order(); return false;" type="button" class="btn_send" style="margin-top: 2%">ส่งออร์เดอร์ลูกค้า</button>
-          </center>
       </div>
       <div class="modal-footer" style="border-top: 5px solid #ffffff; height: 50px">
         <!--<button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
