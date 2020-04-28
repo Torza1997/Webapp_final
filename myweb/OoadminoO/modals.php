@@ -98,7 +98,9 @@
                 
             </tbody>
           </table>
-          <center><button onClick="Send_order(); return false;" type="button" class="btn_send" style="margin-top: 2%">ส่งออร์เดอร์ลูกค้า</button></center>
+          <center>
+            <button id = "btn_send_s" onClick="Send_order(); return false;" type="button" class="btn_send" style="margin-top: 2%">ส่งออร์เดอร์ลูกค้า</button>
+          </center>
       </div>
       <div class="modal-footer" style="border-top: 5px solid #ffffff; height: 50px">
         <!--<button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->

@@ -179,4 +179,21 @@ function update_cook_status(ids,class_n){
             }
        })
 }
+
+$("#btn_send_s").on('click',function(){
+    var User_id = document.getElementById('_user_ID').value;
+    var Ref_no = document.getElementById('RF_n').value;
+    $.ajax({
+          type:"POST",
+          cache:false,
+          url:"send_order.php",
+          data:{
+            User_id:User_id,
+            Ref_no:Ref_no,
+          },
+          success:function (result_s){
+                alert(result_s);
+            }
+       });
+})
      
