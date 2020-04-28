@@ -10,6 +10,8 @@ include '../connect_db.php';
       <th scope="col">ชื่อ</th>
       <th scope="col">นามสกุล</th>
       <th scope="col">วัน/เวลา</th>
+      <th scope="col">เบอร์โทร</th>
+      <th scope="col">ที่อยู่</th>
       <th scope="col">Order</th>
       <th scope="col">สถานะ</th>
       <th scope="col"><center>delete</center></th>
@@ -33,9 +35,11 @@ include '../connect_db.php';
       <td scope="row"><?php echo $No ;?></td>
       <td><?php echo $row_s['F_name']; ?></td>
       <td><?php echo $row_s['L_name']; ?></td>
-      <?php $date_s = date_create($row['Date_'])?>
+      <?php $date_s = date_create($row['Date_']);?>
       <td><?php echo date_format($date_s,"Y/m/d");?></td>
-      <td><a href="javascript:void(0)">View</a></td>
+      <td><?php echo $row_s['Phone'];?></td>
+      <td><a id ="<?php echo $row_s['Adddress']; ?>" onClick="VieW_address(this.id); return false;" href="javascript:void(0)">View</a></td>
+      <td><a id ="<?php echo $row['User_ID']; ?>" onClick="VieW_Menu_list(this.id); return false;" href="javascript:void(0)">View</a></td>
       <td><?php if($row['Status'] == 0){echo "ยังทำไม่เส็จ";}else{}?></td>
       <td>
           <center>

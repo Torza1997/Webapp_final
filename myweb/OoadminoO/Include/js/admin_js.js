@@ -129,3 +129,25 @@ function del_menu(ids){
             }
        }); 
 }
+/*****************************************************/
+function VieW_address(address){
+    $('#aert_modal').modal('show');
+    $("#message").html("<center><h5>"+address+"</h5></center>");
+}
+
+function VieW_Menu_list(ids){
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"fetch_menu_list.php",
+          data:{
+            id:ids,
+            key:'fecth_menu_list',
+          },
+          success:function (result){
+            $('#aert_modal_menu_list').modal('show');
+             $("#fecth_menu_content").html(result);
+            }
+       }); 
+    
+}

@@ -29,11 +29,8 @@
     </div>
     <?php 
       include "modals.php";
+      include "../modal_main.php";
   ?>
-    <?php 
-      include "modals.php";
-  ?>
-   
 </div>
 
 

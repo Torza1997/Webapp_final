@@ -116,21 +116,21 @@ body{
 	margin-bottom: 4%;
 }
 /************popup******************/
-.modal-footer,.modal-header{
+.modal_footer,.modal_header{
 	border-radius: 10px;
 	border: 5px solid #D1FF00;
   	background-color: #000000;
   	color: #ffffff;
 }
 /****************************************/
-.modal-content {
+.modal_content {
 	border-radius: 14px;
 	border: 5px solid #D1FF00;
 	background-color: #ffffff;
 	color: #000000;
 }
 
-.modal-body{
+.modal_body{
 	margin-top: 5%;
 	margin-bottom: 5%;
 	margin-left: 3%;
@@ -166,3 +166,19 @@ body{
  	float: left;
  	
  }
+ .modal_content_alert{
+	margin-top: 25%;
+	border-radius: 25px;
+	border: 5px solid #D1FF00;
+	background-color: #000000;
+    color: white;
+}
+.modal_content_alert_menu_list{
+	margin-top: 25%;
+	border-radius: 25px;
+	border: 5px solid #D1FF00;
+	background-color: #fff;
+	color: white;
+	width: 170%;
+	margin-left: -40%;
+}
