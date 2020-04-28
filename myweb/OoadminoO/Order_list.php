@@ -36,11 +36,11 @@ include '../connect_db.php';
       <td><?php echo $row_s['F_name']; ?></td>
       <td><?php echo $row_s['L_name']; ?></td>
       <?php $date_s = date_create($row['Date_']);?>
-      <td><?php echo date_format($date_s,"Y/m/d");?></td>
+      <td><?php echo date_format($date_s,"Y/m/d H:i:s");?></td>
       <td><?php echo $row_s['Phone'];?></td>
       <td><a id ="<?php echo $row_s['Adddress']; ?>" onClick="VieW_address(this.id); return false;" href="javascript:void(0)">View</a></td>
-      <td><a id ="<?php echo $row['User_ID']; ?>" onClick="VieW_Menu_list(this.id); return false;" href="javascript:void(0)">View</a></td>
-      <td><?php if($row['Status'] == 0){echo "ยังทำไม่เส็จ";}else{}?></td>
+      <td><a class = "<?php echo $row['Ref_number']; ?>" id ="<?php echo $row['User_ID']; ?>" onClick="VieW_Menu_list(this.id,this.className); return false;" href="javascript:void(0)">View</a></td>
+      <td><?php if($row['Status'] == 0){echo "ยังทำไม่เส็จ";}else if($row['Status'] == 1){echo "กำลังทำ";}else if($row['Status'] == 2){echo "ทำเส็จแล้ว";}?></td>
       <td>
           <center>
           <a id = "<?php echo ($row['id']);?>"  href="javascript:void(0)" class="btn delete">ลบ</a>

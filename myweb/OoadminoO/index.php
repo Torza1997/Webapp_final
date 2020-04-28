@@ -1,10 +1,10 @@
 <?php 
-  session_start();
+  /*session_start();
   if($_SESSION['@_$ADDS_USERNAME'] != '' and $_SESSION['status_@_admin'] == 9){
 
   }else{
     header('Location: ../');
-  }
+  }*/
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="Include/css/admin_css.css">
     <link href="Include/css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="/Include/images/logo.png" />
+     <script src="Include/js/2717a8ba5c.js" crossorigin="anonymous"></script>
     <title>TORTAIR COFFEE STORE ADMAIN</title>
 </head>
 <body>

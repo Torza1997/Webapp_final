@@ -135,13 +135,14 @@ function VieW_address(address){
     $("#message").html("<center><h5>"+address+"</h5></center>");
 }
 
-function VieW_Menu_list(ids){
+function VieW_Menu_list(ids,class_n){
   $.ajax({
           type:"POST",
           cache:false,
           url:"fetch_menu_list.php",
           data:{
             id:ids,
+            Rf_n:class_n,
             key:'fecth_menu_list',
           },
           success:function (result){
@@ -149,5 +150,33 @@ function VieW_Menu_list(ids){
              $("#fecth_menu_content").html(result);
             }
        }); 
-    
 }
+/***************************************************************/
+function update_cook_status(ids,class_n){
+  var user_id_s = document.getElementById('_user_ID').value;
+  var rf_n = document.getElementById('RF_n').value;
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"update_status.php",
+          data:{
+            id:ids,
+            key:class_n,
+            user:user_id_s,
+            rf_n:rf_n,
+          },
+          success:function (_data_result){
+             if(_data_result ==1){
+              $('#add_new_b'+ids).html("<a class = 'cooking_' id = '"+ids+"' onClick='update_cook_status(this.id,this.className); return false;'>\
+                กำลังทำ</a>&nbsp<i style ='' class='fas fa-cog fa-spin'></i>"); 
+              }else if(_data_result ==2){
+                $('#add_new_b'+ids).html("<a class = 'cook_success' id = '"+ids+"' onClick='update_cook_status(this.id,this.className); return false;'>\
+                ทำเส็จแล้ว</a>&nbsp<i class='fa fa-check' aria-hidden='true'></i>"); 
+              }else{
+                $('#add_new_b'+ids).html("<a class = 'cook_success' id = '"+ids+"'>รอส่ง</a>&nbsp<i class='fas fa-box'></i>");
+              }
+              $('.main_page').load('Order_list.php');
+            }
+       })
+}
+     

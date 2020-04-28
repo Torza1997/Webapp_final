@@ -74,7 +74,12 @@
       </div>
       <div class="row">
         <div class="col-2"> <img src="/Include/images/logo.png" width="70" height="70" class="d-inline-block align-top" alt="" style="text-align: center;margin-left: 120%;margin-top: -30%;"></div>
-        <div class="col-8">  <center> <h4 id ="User_name_s" style="color:black;text-align: center;"> </h4></center></div>
+        <div class="col-8">
+          <center> 
+          <input id = "_user_ID" type="hidden" name="user_ID">
+          <input id = "RF_n" type="hidden" name="RF_n"><h4 id ="User_name_s" style="color:black;text-align: center;"> </h4>
+        </center>
+      </div>
       </div>
       <div class="modal-body" id = "message" >
           <table class="table table-hover table_style_order">
@@ -93,6 +98,7 @@
                 
             </tbody>
           </table>
+          <center><button onClick="Send_order(); return false;" type="button" class="btn_send" style="margin-top: 2%">ส่งออร์เดอร์ลูกค้า</button></center>
       </div>
       <div class="modal-footer" style="border-top: 5px solid #ffffff; height: 50px">
         <!--<button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
