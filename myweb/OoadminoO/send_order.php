@@ -1,7 +1,7 @@
 <?php 
 	include '../connect_db.php';
 	date_default_timezone_set("Asia/Bangkok");
-	$date_s_ = date("Y/m/d H:i:s");
+	$date_s_ = date("Y/m/d");
 
 	$user_id = $_POST['User_id'];
 	$Ref_no = $_POST['Ref_no'];

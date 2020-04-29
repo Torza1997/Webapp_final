@@ -9,7 +9,7 @@
             <div class="navbar-nav">
                 <a id = "order_list" href="javascript:void(0)" class="nav-item nav-link active">ออร์เดอรฺของลูกค้า</a>
                 <a id = "menu" href="javascript:void(0)" class="nav-item nav-link">เพิ่มเมนูใหม่/แก้ไข</a>
-                <a href="javascript:void(0)" class="nav-item nav-link">เพิ่มรหัสแอดมิน/แก้ไข</a>
+                <a id = "Add_admin"href="javascript:void(0)" class="nav-item nav-link">เพิ่มรหัสแอดมิน/ลบ</a>
                 <a id = "Sales" href="javascript:void(0)" class="nav-item nav-link">ยอดขายของร้าน</a>
             </div>
         </div>

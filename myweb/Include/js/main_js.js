@@ -98,7 +98,15 @@ $('#link_home').click(function(){
   $(".home").load("content/coffee.php");
 });
 $('#link_contrac').click(function(){
-  alert('ไว้ทำหน้า ติดต่อ');
+  $('#aert_modal').modal('show');
+  $("#message").html(' \
+    <center><h5>ช่องทางการติดต่อ</h5></center> \
+    <center><a style="color: #D1FF00; display: inline;" href="https://www.facebook.com/Tor-tair-Coffee-Store-test-103745754659577">Facebook</a> \
+    <a style="color: #D1FF00;display: inline;" href="https://www.instagram.com/t.tor.thanatos/">Instagram</a> \
+     <a style="color: #D1FF00;display: inline;" href=" http://line.me/ti/p/~torza1997">Line</a>\
+     <a style="color: #D1FF00;display: inline;" href = "javascript:void(0)">Phone: 0652587083</a></center> \
+    ');
+  
 });
 /***********************************/
 function alert_(){

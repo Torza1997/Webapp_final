@@ -1,11 +1,10 @@
 <?php 
-  /*session_start();
+  session_start();
   if($_SESSION['@_$ADDS_USERNAME'] != '' and $_SESSION['status_@_admin'] == 9){
 
   }else{
     header('Location: ../');
-  }*/
-
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

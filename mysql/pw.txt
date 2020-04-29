@@ -1,0 +1,34 @@
+mysql
+
+user: coffee_web
+pw: ksdfa46da6fa646af64a6f6a4f6a
+
+
+CREATE USER 'coffee_web'@'localhost' IDENTIFIED BY 'ksdfa46da6fa646af64a6f6a4f6a';
+
+GRANT ALL PRIVILEGES ON *.* TO 'coffee_web'@'localhost' WITH GRANT OPTION;
+
+show columns from [table name];
+SELECT * FROM [table name]
+
+
+#TRUNCATE TABLE Product;
+#TRUNCATE TABLE [Coffee_Shop_tortair.]Product;
+
+
+ALTER TABLE vendors
+ADD COLUMN phone VARCHAR(15) NOT NULL AFTER name;
+
+
+ALTER TABLE vendors
+ADD COLUMN vendor_group INT NOT NULL;
+
+
+
+
+mysql -ucoffee_web -pksdfa46da6fa646af64a6f6a4f6a
+
+show databases;
+use Coffee_Shop_tortair;
+
+select * from

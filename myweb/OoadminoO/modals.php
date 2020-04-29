@@ -105,3 +105,56 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal register-->
+<div class="modal fade" id = "regis_admin_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content content_bg">
+      <div class="modal-header" style="border-bottom: 5px solid #000000;">
+        <button style="color: #D1FF00" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <center><h4 style="color: #D1FF00">REGISTER</h4></center>
+      <div class="modal-body" style="color: #D1FF00">
+        <form id ="admin_regis" >
+            <div class="row">
+              <div class="form-group col-4">
+                <label class ="F_name" for="F_name">ชื่อ</label>
+                <input type="text" id="F_name" name="F_name" placeholder="ชื่อ">
+              </div>
+              <div class="form-group col-4">
+                <label class = "L_name" for="L_name">นามสกุล</label>
+                <input type="text" id="L_name" name="L_name" placeholder="นามสกุล">
+              </div>
+            </div>
+             <div class="row">
+              <div class="form-group col-4">
+                <label class ="user_name" for="user_name">Username</label>
+                <input type="text" id="user_name" name="user_name" placeholder="username">
+                <span id="alert2"></span>
+              </div>
+              <div class="form-group col-4">
+                <label class = "user_pw" for="user_pw">Password</label>
+                <input type="password" id="user_pw" name="user_pw" placeholder="password">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-4">
+                <label class = "user_phone" for="user_phone">Phone</label>
+                <input type="text" id="user_phone" name="user_phone" placeholder="Phone">
+                 <span id="alert3"></span>
+              </div>
+            </div>
+            <span id="alert1"></span>
+          </form>
+          <span id="alert5"></span>
+      </div>
+      <div class="modal-footer" style="border-top: 5px solid #000000;">
+        <button id = "regis_admin" style="color: black;" type="button" class="btn btn-secondary">Sign in</button>
+        <button style="color: black;" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

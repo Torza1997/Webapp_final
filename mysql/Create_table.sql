@@ -11,8 +11,8 @@ insert into Product(Pd_name,Type,Price,image) Value ('Chocolate Cake ',1,200,'ca
 CREATE TABLE user_all (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, F_name  TEXT NOT NULL, L_name  TEXT NOT NULL,Username TINYTEXT NOT NULL,Password LONGTEXT NOT NULL,Email TEXT NOT NULL,Phone TEXT NOT NULL,Adddress LONGTEXT NOT NULL ,Date_regis DATETIME NOT NULL);
 
 
-CREATE TABLE admin_S (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, username_admin  TEXT NOT NULL, password_admin  TEXT NOT NULL,Status_admin INT(1) NOT NULL);
-insert into admin_S(username_admin,password_admin,Status_admin) Value ('torza_18847',md5('torza_18847'),9);
+CREATE TABLE admin_S (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, username_admin  TEXT NOT NULL, password_admin  TEXT NOT NULL, F_name  TEXT NOT NULL, L_name  TEXT NOT NULL,Status_admin INT(1) NOT NULL,phone VARCHAR(15) NOT NULL);
+insert into admin_S(username_admin,password_admin,F_name,L_name,Status_admin,phone) Value ('torza_18847',md5('torza_18847'),'atsada','karanet',9,'0652587083');
 
 
 CREATE TABLE Order_list (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, User_ID  TINYTEXT NOT NULL,Status INT(1) NOT NULL,Date_ DATETIME NOT NULL,Ref_number INT(10) NOT NULL);

@@ -14,6 +14,10 @@ $('#order_list').on('click',function(){
   $('.main_page').load('Order_list.php');
 });
 
+$('#Add_admin').on('click',function(){
+  $('.main_page').load('admin_list.php');
+});
+
 function Show_modal(){
 	clearFrom();
 	$('#ADD_memuss').modal('show');
@@ -282,3 +286,72 @@ function admin_delete_oder_one(memu_id){
             }
        });
 }
+/*********************admin****************************/
+function delete_admin_user(ids){
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"delete_admin.php",
+          data:{
+            id:ids,
+            key:'delete_admin',
+          },
+          success:function (result){
+              $('#message').html('<center><h5 style ="color: #ffffff;">'+result+'</h5></center>');
+              $('#aert_modal').modal('show');
+              $('.main_page').load('admin_list.php');
+           }
+       }); 
+}
+
+function add_admin(ids){
+  claerRegisfrom();
+  $('#regis_admin_modal').modal('show');
+}
+
+function claerRegisfrom(){
+  $("#F_name").val('');$("#L_name").val('');
+  $("#user_name").val('');$("#user_pw").val('');
+  $("#user_phone").val('');
+}
+
+$("#regis_admin").click(function(){
+    var data_login = $("#admin_regis").serialize();
+    $.ajax({
+          type:"POST",
+          cache:false,
+          url:"regis_admin.php",
+          data:data_login,
+          success: function (result){
+              if(result == 1){
+                  $("#alert3").html("");$("#alert5").html("");$("#alert2").html("");
+                  $("#alert1").html("<p style = 'color:red; margin-left:6% ;font-size:80%;'>กรุณากรอกข้อมูลให้ครับ</p>");
+                }else if(result == 2){
+                  $("#alert1").html("");$("#alert5").html("");
+                  $("#alert3").html("<p id ='P_s1'>ตัวเลขเบอร์โทร 10 หลัก</p>");
+                }else if(result == 3){
+                  $("#alert1").html("");$("#alert5").html("");
+                  $("#alert3").html("");
+                  $("#alert2").html("<p id ='P_s1'>ใส่อักษรพิเสษด้วย @/%&$</p>");
+                }else if(result == 6){
+                  $("#alert1").html("");$("#alert2").html("");
+                  $("#alert3").html("");
+                  $("#alert5").html("<p style = 'color:#D1FF00; margin-left:6% ;font-size:80%;'>Success</p>");
+                  claerRegisfrom();
+                  $('.main_page').load('admin_list.php');
+                }else if(result==5){
+                  $("#alert1").html("");$("#alert2").html("");
+                  $("#alert3").html("");
+                  $("#alert5").html("<p style = 'color:red; margin-left:6% ;font-size:80%;'>user นี้มีคนใช้แล้ว</p>");
+                }else{
+                  $("#alert1").html("");
+                  $("#alert3").html("");
+                  $("#alert5").html("");
+                  $("#alert2").html("");
+                }
+                
+            }
+       });
+});
+
+

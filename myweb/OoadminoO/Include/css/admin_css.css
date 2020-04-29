@@ -63,6 +63,43 @@ body{
 		width: 9ch
 	}
 }
+
+
+#animate_admin_of_tortair{
+	margin-top: 4%;
+	animation: type_admin 3s steps(22);
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 4px solid black;
+	width: 22ch;
+	color: black;
+}
+@keyframes type_admin {
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 22ch
+	}
+}
+
+#animate_sales{
+	margin-top: 4%;
+	animation: type_sales 3s steps(15);
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 4px solid black;
+	width: 15ch;
+	color: black;
+}
+@keyframes type_sales {
+	0%{
+		width: 0ch;
+	}
+	100%{
+		width: 15ch
+	}
+}
 /*********************************************/
 .row_style{
 	border-radius: 25px;
@@ -91,7 +128,7 @@ body{
     background-color: #D1FF00;
     color: black;
 }
-.table_style a,#ADD_memu{
+.table_style a,#ADD_memu,#ADD_addmin{
 	background-color: #D1FF00;
     color: black;
 }
@@ -111,7 +148,7 @@ body{
     color: #D1FF00;
     text-decoration: none;
 }
-#ADD_memu{
+#ADD_memu,#ADD_addmin{
 	margin-top: 2%;
 	margin-bottom: 4%;
 }
@@ -193,3 +230,33 @@ body{
 	border: 5px solid #D1FF00;
 	color: #D1FF00;
 } 
+
+#F_name ,.F_name,#user_name,.user_name{
+	width: 150%;
+	margin-left: 20%;
+}
+#L_name ,.L_name,#user_pw,.user_pw{
+    width: 150%;
+	margin-left: 60%;
+}
+#user_phone,.user_phone{
+	width: 150%;
+	margin-left: 20%;
+}
+.content_bg{
+	background-color: black;
+	border-radius: 25px;
+	border: 5px solid #D1FF00;
+	color: #D1FF00;
+}
+#P_s,#P_s1{
+	margin-top: 1%;
+	margin-bottom: -10%;
+	color:red; 
+	margin-left:20%;
+	font-size:80%;
+	width: 100%
+}
+#P_s1{
+	margin-left:20%;
+}
