@@ -154,7 +154,7 @@ $(document).ready(function(){
     },   
     success:function(result)
     {
-      $('.main_page').load('Images_header.php');
+      alert(result);
     }
    }); 
   }

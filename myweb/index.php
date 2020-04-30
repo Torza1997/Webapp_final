@@ -52,7 +52,6 @@
         $row_r = mysqli_fetch_assoc($result_r);
         ?>
             <div class="row-6 right" style="background:url('Include/images/<?php echo $row_r['Image_name'];?>');background-size: cover;background-position: center;background-repeat: no-repeat;">
-        ?> 
         <?php 
           }
         ?>
