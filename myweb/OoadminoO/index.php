@@ -22,6 +22,9 @@
   <?php 
       include "admin_nav.php";
   ?>
+  <div class="container" id ="load_nav2">
+    
+  </div>
 <div>
   <div class="row row_style">
     <div class="container main_page">

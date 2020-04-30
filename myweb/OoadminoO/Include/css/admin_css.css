@@ -260,3 +260,15 @@ body{
 #P_s1{
 	margin-left:20%;
 }
+#navbar2{
+	width: 130%;
+	border-radius: 25px;
+	margin-top: 2%;
+	border: 5px solid #D1FF00;
+	background-color: #000000;
+	color: #ffffff;
+	margin-left: -15%;
+}
+#navbar2 a{
+	color: #ffffff;
+}

@@ -1,20 +1,25 @@
 $(document).ready(function(){
+  $('#load_nav2').load('admin_nav2.php');
   $('.main_page').load('Order_list.php');
 });
 
 $('#menu').on('click',function(){
+  $('#load_nav2').html('');
 	$('.main_page').load('menu.php');
 });
 
 $('#Sales').on('click',function(){
+  $('#load_nav2').html('');
   $('.main_page').load('graph_sales.php');
 });
 
 $('#order_list').on('click',function(){
   $('.main_page').load('Order_list.php');
+  $('#load_nav2').load('admin_nav2.php');
 });
 
 $('#Add_admin').on('click',function(){
+  $('#load_nav2').html('');
   $('.main_page').load('admin_list.php');
 });
 

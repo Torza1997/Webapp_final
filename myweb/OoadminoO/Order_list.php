@@ -1,5 +1,7 @@
 <?php 
 include '../connect_db.php';
+session_start();
+print_r($_SESSION["cook_status_"]);
 ?>
 <img src="/Include/images/logo.png" width="70" height="70" class="d-inline-block align-top" alt="" style="float: left;margin-top: 2%;margin-bottom: 2%;margin-left: 34%;">
 <h1 style="float: left;" id= "animate_order_S">Order Lists</h1>
@@ -19,7 +21,7 @@ include '../connect_db.php';
   </thead>
   <tbody>
   <?php
-    $sql = "SELECT * FROM Order_list"; 
+    $sql = "SELECT * FROM Order_list WHERE Status = '".$_SESSION["cook_status_"]."'"; 
     $result = mysqli_query($conn, $sql);
     $No = 0;
     if (mysqli_num_rows($result) > 0) {
