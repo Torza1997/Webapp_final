@@ -23,6 +23,10 @@ $('#Add_admin').on('click',function(){
   $('.main_page').load('admin_list.php');
 });
 
+$('#Upload_images').on('click',function(){
+  $('.main_page').load('Images_header.php');
+});
+
 function Show_modal(){
 	clearFrom();
 	$('#ADD_memuss').modal('show');
@@ -92,6 +96,71 @@ $(document).ready(function(){
   }
  });
 });
+
+
+$(document).ready(function(){
+ $(document).on('change', '#file_head', function(){
+
+  var name = document.getElementById("file_head").files[0].name;
+  var form_data = new FormData();
+  var ext = name.split('.').pop().toLowerCase();
+  if(jQuery.inArray(ext, ['gif','png','jpg','jpeg']) == -1) 
+  {
+   alert("Invalid Image File");
+  }else{
+   form_data.append("file", document.getElementById('file_head').files[0]);
+   $.ajax({
+    url:"uploadimage_header.php",
+    method:"POST",
+    key:'head',
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    beforeSend:function(){
+      
+    },   
+    success:function(result)
+    {
+      $('.main_page').load('Images_header.php');
+    }
+   }); 
+  }
+ });
+});
+
+
+$(document).ready(function(){
+ $(document).on('change', '#file_right', function(){
+
+  var name = document.getElementById("file_right").files[0].name;
+  var form_data = new FormData();
+  var ext = name.split('.').pop().toLowerCase();
+  if(jQuery.inArray(ext, ['gif','png','jpg','jpeg']) == -1) 
+  {
+   alert("Invalid Image File");
+  }else{
+   form_data.append("file", document.getElementById('file_right').files[0]);
+   $.ajax({
+    url:"uploadimage_right.php",
+    method:"POST",
+    key:'right',
+    data: form_data,
+    contentType: false,
+    cache: false,
+    processData: false,
+    beforeSend:function(){
+      
+    },   
+    success:function(result)
+    {
+      $('.main_page').load('Images_header.php');
+    }
+   }); 
+  }
+ });
+});
+
 /*/***************************************************/
 function edit_menu(id){
 	 $.ajax({
