@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+  include "connect_db.php"; 
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +44,19 @@
     </div>
    <!--right-->
     <div class="col-2">
-      <div class="row-6 right" style="background:url('Include/images/img1_rights.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;">
+
+      <?php 
+        $sql_r = "SELECT * FROM Image_header WHERE Status_ = 2 "; 
+        $result_r = mysqli_query($conn, $sql_r);
+        if(mysqli_num_rows($result_r) == 1) {
+        $row_r = mysqli_fetch_assoc($result_r);
+        ?>
+            <div class="row-6 right" style="background:url('Include/images/<?php echo $row_r['Image_name'];?>');background-size: cover;background-position: center;background-repeat: no-repeat;">
+        ?> 
+        <?php 
+          }
+        ?>
+        
       </div>
     </div>
 
