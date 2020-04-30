@@ -23,7 +23,7 @@ CREATE TABLE Menu_list (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, User_ID  TIN
 CREATE TABLE Product_Sales (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Pd_ID  TINYTEXT NOT NULL,Type  INT(1) NOT NULL,Price INT(4) NOT NULL,Quantity INT(3) NOT NULL,Total INT(3) NOT NULL,Date_s DATETIME NOT NULL);
 
 CREATE TABLE Image_header (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Image_name  LONGTEXT NOT NULL,Status_  INT(1) NOT NULL);
-insert into Image_header(Image_name,Status_) Value ('header_img.jpeg',1);
+insert into Image_header(Image_name,Status_) Value ('simple-life---coffee-wallpaper.jpg',1);
 insert into Image_header(Image_name,Status_) Value ('header_img2.jpeg',1);
 insert into Image_header(Image_name,Status_) Value ('header_img3.jpg',1);
 insert into Image_header(Image_name,Status_) Value ('img1_rights.jpg',2);
