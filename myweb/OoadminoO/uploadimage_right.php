@@ -10,7 +10,12 @@ if($_FILES["file"]["name"] != '')
  	if ($conn->query($sql) === TRUE) {
 		echo 1;
 	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		$sql = "INSERT INTO Image_header(Image_name,Status_)VALUES ('".$name."','".$Status."')";
+	 	if ($conn->query($sql) === TRUE) {
+			echo 1;
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
 	}
   }
 }

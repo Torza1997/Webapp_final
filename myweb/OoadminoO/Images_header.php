@@ -29,7 +29,7 @@ print_r($_SESSION["cook_status_"]);
       <td><img src="/Include/images/<?php echo $row['Image_name']; ?>" width="300" height="100" class="d-inline-block align-top" alt="" style=""></td>
       <td>
       <center>
-      <a id = "<?php echo $row['Ref_number']; ?>" onClick="Delete_head_image(this.id); return false;"  href="javascript:void(0)" class="btn delete">ลบ</a>
+      <a class = "<?php echo $row['Image_name']; ?>" id = "<?php echo $row['id']; ?>" onClick="Delete_head_image(this.id,this.className); return false;"  href="javascript:void(0)" class="btn delete">ลบ</a>
       </center>
       </td>
     </tr>
@@ -66,7 +66,7 @@ print_r($_SESSION["cook_status_"]);
       <td><img src="/Include/images/<?php echo $row['Image_name']; ?>" width="70" height="70" class="d-inline-block align-top" alt="" style=""></td>
       <td>
       <center>
-      <a id = "<?php echo $row['Ref_number']; ?>" onClick="Delete_head_image(this.id); return false;"  href="javascript:void(0)" class="btn delete">ลบ</a>
+       <a class = "<?php echo $row['Image_name']; ?>" id = "<?php echo $row['id']; ?>" onClick="Delete_head_image(this.id,this.className); return false;"  href="javascript:void(0)" class="btn delete">ลบ</a>
       </center>
       </td>
     </tr>

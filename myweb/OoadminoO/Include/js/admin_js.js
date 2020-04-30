@@ -160,6 +160,23 @@ $(document).ready(function(){
   }
  });
 });
+/*************************************************/
+function Delete_head_image(ids,img){
+  $.ajax({
+          type:"POST",
+          cache:false,
+          url:"delete_image.php",
+          data:{
+            id:ids,
+            key:'delete_image',
+            img:img,
+          },
+          success:function (){
+              $('.main_page').load('Images_header.php');
+            }
+       })
+}
+
 
 /*/***************************************************/
 function edit_menu(id){
