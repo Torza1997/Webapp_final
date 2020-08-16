@@ -7,4 +7,4 @@
 #เวลาสร้าง database ก็สร้างใน mysql ที่ลงเวลาใน contaniner เลย   
 #ดังเราจะใช่แค่ container แค่ 1 ตัว ง่ายต่อการอัพขึ้น docker hub
 
-#แบบสำเร็จ 
+#แบบสำเร็จ  https://dockr.ly/30ix6BN
